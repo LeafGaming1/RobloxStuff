@@ -1,13 +1,5 @@
---[[
-╭━╮╱╭╮╱╱╱╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╭━━━╮╱╭╮            |
-┃┃╰╮┃┃╱╱╱╱╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱┃╭━╮┃╱┃┃            |
-┃╭╮╰╯┣━━┳╮╭┳━━┫┃╭━━┳━━┳━━╮┃┃╱┃┣━╯┣╮╭┳┳━╮     | Welcome to the Nameless Admin source, feel free to take a look around.
-┃┃╰╮┃┃╭╮┃╰╯┃┃━┫┃┃┃━┫━━┫━━┫┃╰━╯┃╭╮┃╰╯┣┫╭╮╮    | Enjoy.
-┃┃╱┃┃┃╭╮┃┃┃┃┃━┫╰┫┃━╋━━┣━━┃┃╭━╮┃╰╯┃┃┃┃┃┃┃┃    |
-╰╯╱╰━┻╯╰┻┻┻┻━━┻━┻━━┻━━┻━━╯╰╯╱╰┻━━┻┻┻┻┻╯╰╯    |
---]]
+-- CREDIT GOES TO THE DEVELOPERS OF Nameless Admin.
 
- -- Waits until game is loaded
  local game = game
  local GetService = game.GetService
  if (not game.IsLoaded(game)) then
@@ -16,16 +8,17 @@
 	 wait(1.5)
  end
  
- -- Notification library
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/notificationtest"))();
  local Notify = Notification.Notify;
-
+ 
+ --[[ 
  Notify({
 		 Description = "https://discord.gg/pnPVKKdpfd";
 		 Title = "Join the Discord Server!";
 		 Duration = 20;
 		 
 });
+ ]]--
  
  -- Custom file functions checker checker
  local CustomFunctionSupport = isfile and isfolder and writefile and readfile and listfiles
@@ -33,23 +26,23 @@
  
  -- Creates folder & files for Prefix & Plugins
  if FileSupport then
- if not isfolder('Nameless-Admin') then
- makefolder('Nameless-Admin')
+ if not isfolder('Nameless-AdminV2') then
+ makefolder('Nameless-AdminV2')
  end
  
- if not isfolder('Nameless-Admin/Plugins') then
-	 makefolder('Nameless-Admin/Plugins')
+ if not isfolder('Nameless-AdminV2/Plugins') then
+	 makefolder('Nameless-AdminV2/Plugins')
  end
  
- if not isfile("Nameless-Admin/Prefix.txt") then
- writefile("Nameless-Admin/Prefix.txt", ';')
+ if not isfile("Nameless-AdminV2/Prefix.txt") then
+ writefile("Nameless-AdminV2/Prefix.txt", ';')
  else
  end
  end
  
  -- [[ PREFIX AND OTHER STUFF. ]] -- 
  local opt = {
-	 prefix = readfile("Nameless-Admin/Prefix.txt", ';'), -- If player's executor has the custom file function support it reads the prefix file to get prefix
+	 prefix = readfile("Nameless-AdminV2/Prefix.txt", ';'), -- If player's executor has the custom file function support it reads the prefix file to get prefix
 	 tupleSeparator = ',',	-- ;ff me,others,all | ;ff me/others/all
 	 ui = {					-- never did anything with this
 		 
