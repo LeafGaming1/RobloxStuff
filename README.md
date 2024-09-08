@@ -1,13 +1,2 @@
-You
-only
-need
-to
-use
-the
-Loader.lua.
-The
-LoaderGUI.rbxm
-is
-only
-for
-customization.
+## This is just some roblox exploiting stuff
+###### I am not responsible for any damages that happened to you or someone else if you use my resources
