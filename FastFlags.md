@@ -23,6 +23,6 @@
 > **1 second = 1000ms**
 ```json
 {
-    "DFIntDefaultTimeoutTimeMs": "10000"
+    "DFIntDefaultTimeoutTimeMs": "1200000" // The 1200000 will be 20 minutes
 }
 ```
