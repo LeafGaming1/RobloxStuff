@@ -34,3 +34,9 @@ Use bloxstrap to edit the Fast Flags
   "FFlagLuaAppsEnableParentalControlsTab": "False"
 }
 ```
+### Max zoom distance
+```json
+{
+  "FIntCameraMaxZoomDistance": "9999",
+}
+```
