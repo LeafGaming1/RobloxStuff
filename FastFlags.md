@@ -28,3 +28,9 @@ Use bloxstrap to edit the Fast Flags
     "DFIntDefaultTimeoutTimeMs": "1200000" // The 1200000 will be 20 minutes
 }
 ```
+### Remove parental controls tab lol
+```json
+{
+  "FFlagLuaAppsEnableParentalControlsTab": "False"
+}
+```
