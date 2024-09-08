@@ -1,6 +1,6 @@
 -- // GUI TO LUA \\ --
 
--- // INSTANCES: 36 | SCRIPTS: 6 | MODULES: 0 \\ --
+-- // INSTANCES: 34 | SCRIPTS: 4 | MODULES: 0 \\ --
 
 local UI = {}
 
@@ -53,9 +53,7 @@ UI["7"] = Instance.new("UICorner", UI["6"])
 
 -- // StarterGui.Loader.Main.IY.Execute \\ --
 UI["8"] = Instance.new("LocalScript", UI["6"])
-UI["8"]["Enabled"] = false
 UI["8"]["Name"] = [[Execute]]
-UI["8"]["Disabled"] = true
 
 -- // StarterGui.Loader.Main.IY.UIGradient \\ --
 UI["9"] = Instance.new("UIGradient", UI["6"])
@@ -159,9 +157,7 @@ UI["13"] = Instance.new("UICorner", UI["12"])
 
 -- // StarterGui.Loader.Main.Exit.Execute \\ --
 UI["14"] = Instance.new("LocalScript", UI["12"])
-UI["14"]["Enabled"] = false
 UI["14"]["Name"] = [[Execute]]
-UI["14"]["Disabled"] = true
 
 -- // StarterGui.Loader.Main.Minimize_Under \\ --
 UI["15"] = Instance.new("TextLabel", UI["2"])
@@ -288,15 +284,20 @@ UI["21"] = Instance.new("UICorner", UI["20"])
 UI["22"] = Instance.new("UICorner", UI["20"])
 
 
--- // StarterGui.Loader.Notification.LocalScript \\ --
-UI["23"] = Instance.new("LocalScript", UI["1c"])
-UI["23"]["Enabled"] = false
-UI["23"]["Disabled"] = true
-
--- // StarterGui.Loader.Main \\ --
-UI["24"] = Instance.new("LocalScript", UI["1"])
-UI["24"]["Name"] = [[Main]]
-
+-- // StarterGui.Loader.Main.IY.Execute \\ --
+local function SCRIPT_8()
+local script = UI["8"]
+	local btn = script.Parent
+	local btnTextOld = btn.Text
+	
+	btn.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/LeafGaming1/InfiniteYieldV2/main/IYV2.lua"))()
+		btn.Text = "Executed!"
+		task.wait(.5)
+		btn.Text = btnTextOld
+	end)
+end
+task.spawn(SCRIPT_8)
 -- // StarterGui.Loader.Main.NA.Execute \\ --
 local function SCRIPT_d()
 local script = UI["d"]
@@ -311,6 +312,15 @@ local script = UI["d"]
 	end)
 end
 task.spawn(SCRIPT_d)
+-- // StarterGui.Loader.Main.Exit.Execute \\ --
+local function SCRIPT_14()
+local script = UI["14"]
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+task.spawn(SCRIPT_14)
 -- // StarterGui.Loader.Main.Minimize.Execute \\ --
 local function SCRIPT_19()
 local script = UI["19"]
@@ -319,6 +329,8 @@ local script = UI["19"]
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 		script.Parent.Parent.Parent.Notification.Visible = true
+		task.wait(4)
+		script.Parent.Parent.Parent.Notification.Visible = false
 	end)
 	
 	uis.InputBegan:Connect(function(input, gpe)
@@ -331,35 +343,5 @@ local script = UI["19"]
 	end)
 end
 task.spawn(SCRIPT_19)
--- // StarterGui.Loader.Main \\ --
-local function SCRIPT_24()
-local script = UI["24"]
-	local game = game
-	local GetService = game.GetService
-	
-	local function enableScripts()
-		for _, Script in script.Parent:GetDescendants() do
-			if (Script:IsA("LocalScript")) then
-				if Script.Enabled == false then
-					Script.Enabled = true
-				end
-			end
-		end
-	end
-	
-	if (not game.IsLoaded(game)) then
-		local Loaded = game.Loaded
-		Loaded.Wait(Loaded);
-		wait(1.5)
-		if game.IsLoaded(game) then
-			enableScripts()
-		end
-	else
-		enableScripts()
-	end
-	
-	
-end
-task.spawn(SCRIPT_24)
 
 return UI["1"], require;
