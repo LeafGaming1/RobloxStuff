@@ -1,5 +1,5 @@
 Use bloxstrap to edit the Fast Flags
-# Download here: ## https://github.com/pizzaboxer/bloxstrap/releases/
+# Download here: https://github.com/pizzaboxer/bloxstrap/releases/
 ### Noclip (Glitchy)
 ```json
 {
